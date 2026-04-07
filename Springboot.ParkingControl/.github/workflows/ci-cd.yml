@@ -1,8 +1,6 @@
 name: CI/CD Pipeline
 
 on:
-  push:
-    branches: [ "dev", "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -11,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Checkout código
         uses: actions/checkout@v4
 
       - name: Configurar Java
@@ -28,5 +26,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Simulando deploy
-        run: echo "Deploy realizado com sucesso"
+      - name: Simulação de deploy
+        run: echo "Deploy realizado com sucesso "
