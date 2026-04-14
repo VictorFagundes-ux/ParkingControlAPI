@@ -2,13 +2,18 @@ name: Continuous Delivery
 
 on:
   push:
+<<<<<<< cd.yml
     branches: ["main"]
+=======
+    branches: [ "main" ]
+>>>>>>> main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< cd.yml
       - name: Checkout do código
         uses: actions/checkout@v4
 
@@ -23,3 +28,6 @@ jobs:
 
       - name: Executar aplicação (simulação deploy)
         run: java -jar target/*.jar &
+=======
+      - run: echo "Deploy realizado com sucesso."
+>>>>>>> main

@@ -1,4 +1,9 @@
-FROM ubuntu:latest
-LABEL authors="Victor_Sorrentino_Fagundes"
+FROM eclipse-temurin:17-jdk-jammy
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY . .
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
