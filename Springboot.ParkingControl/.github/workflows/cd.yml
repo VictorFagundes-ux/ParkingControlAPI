@@ -2,11 +2,32 @@ name: Continuous Delivery
 
 on:
   push:
+<<<<<<< cd.yml
+    branches: ["main"]
+=======
     branches: [ "main" ]
+>>>>>>> main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< cd.yml
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build com Maven
+        run: mvn clean package -DskipTests
+
+      - name: Executar aplicação (simulação deploy)
+        run: java -jar target/*.jar &
+=======
       - run: echo "Deploy realizado com sucesso."
+>>>>>>> main

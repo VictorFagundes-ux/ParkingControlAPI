@@ -9,5 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Build realizado com sucesso"
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build com Maven
+        run: mvn clean install
+
+      - name: Rodar testes
+        run: mvn test
