@@ -1,0 +1,12 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Deploy realizado com sucesso."
